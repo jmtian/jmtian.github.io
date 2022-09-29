@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="shell 脚本文件命令行参数12345$0    : 当前脚本文件名$1    : 传递给脚本的第 1 个参数$&amp;#123;2&amp;#125;  : 传递给脚本的第 2 个参数$&amp;#123;12&amp;#125; : 传递给脚本的第 12 个参数 $&amp;#123;n&amp;#125;  : 传递给脚本的第 n 个参数, 个位数时可省略&#96;&amp;#123;&amp;#125;&#96;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shell 命令笔记">
+<meta property="og:url" content="http://example.com/2022/09/29/shell-note/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="shell 脚本文件命令行参数12345$0    : 当前脚本文件名$1    : 传递给脚本的第 1 个参数$&amp;#123;2&amp;#125;  : 传递给脚本的第 2 个参数$&amp;#123;12&amp;#125; : 传递给脚本的第 12 个参数 $&amp;#123;n&amp;#125;  : 传递给脚本的第 n 个参数, 个位数时可省略&#96;&amp;#123;&amp;#125;&#96;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-09-29T08:24:55.000Z">
+<meta property="article:modified_time" content="2022-09-29T08:37:18.391Z">
+<meta property="article:author" content="jmtian">
+<meta property="article:tag" content="shell">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/09/29/shell-note/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/09/29/shell-note/","path":"2022/09/29/shell-note/","title":"Shell 命令笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Shell 命令笔记 | Hello World</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hello World</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#shell-%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">shell 脚本文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">命令行参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if-%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.2.</span> <span class="nav-text">if 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">shell设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E7%AD%9B%E9%80%89"><span class="nav-number">1.4.</span> <span class="nav-text">文本筛选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk-%E8%84%9A%E6%9C%AC%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.5.</span> <span class="nav-text">awk 脚本格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%89%B2%E6%96%87%E4%BB%B6%E5%90%8D%E5%92%8C%E5%90%8E%E7%BC%80"><span class="nav-number">1.6.</span> <span class="nav-text">分割文件名和后缀</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">jmtian</p>
+  <div class="site-description" itemprop="description">逝者如斯夫！不舍昼夜。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/29/shell-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jmtian">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+      <meta itemprop="description" content="逝者如斯夫！不舍昼夜。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Shell 命令笔记 | Hello World">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Shell 命令笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-09-29 16:24:55 / Modified: 16:37:18" itemprop="dateCreated datePublished" datetime="2022-09-29T16:24:55+08:00">2022-09-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="shell-脚本文件"><a href="#shell-脚本文件" class="headerlink" title="shell 脚本文件"></a>shell 脚本文件</h2><h3 id="命令行参数"><a href="#命令行参数" class="headerlink" title="命令行参数"></a>命令行参数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$0    : 当前脚本文件名</span><br><span class="line">$1    : 传递给脚本的第 1 个参数</span><br><span class="line">$&#123;2&#125;  : 传递给脚本的第 2 个参数</span><br><span class="line">$&#123;12&#125; : 传递给脚本的第 12 个参数 </span><br><span class="line">$&#123;n&#125;  : 传递给脚本的第 n 个参数, 个位数时可省略`&#123;&#125;`</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h3 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h3><ul>
+<li>判断文件是否存在</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ -f <span class="variable">$filename</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;file exist :&quot;</span> <span class="variable">$filename</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;file not exist :&quot;</span> <span class="variable">$filename</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="shell设置"><a href="#shell设置" class="headerlink" title="shell设置"></a>shell设置</h3><ul>
+<li>ls -l 设置时间格式</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> TIME_STYLE=<span class="string">&#x27;+%Y/%m/%d %H:%M:%S&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文本筛选"><a href="#文本筛选" class="headerlink" title="文本筛选"></a>文本筛选</h3><p>文本样本如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">error 2016-09-01 00:00:00 [oper:http request],[ret:404],[ec:-100],[url:http://www.test.com/index.html]</span><br><span class="line">error 2016-09-01 00:01:00 [oper:http request],[ret:404],[ec:-100],[url:http://www.test.com/index.html]</span><br><span class="line">fatal 2016-09-01 00:02:00 [oper:data request],[ret:502],[ec:-101],[url:http://www.test.com/index.html]</span><br><span class="line">debug 2016-09-01 00:03:00 [oper:data request],[ret:403],[ec:-102],[url:http://www.test.com/index.html]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 筛选出包含error 或 fatal的信息</span></span><br><span class="line">$ <span class="built_in">log</span>=<span class="string">&quot;error.log&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 筛选出包含error 或 fatal的日志, 结果输出到文件</span></span><br><span class="line">$ grep -E <span class="string">&quot;error|fatal&quot;</span> <span class="variable">$log</span> &gt; result.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 去除头部的error 或 fatal 字段</span></span><br><span class="line">$ <span class="built_in">cut</span> <span class="variable">$log</span> -d <span class="string">&quot; &quot;</span> -f 2-</span><br><span class="line"></span><br><span class="line"><span class="comment"># 截取时间信息</span></span><br><span class="line">$ <span class="built_in">cut</span> <span class="variable">$log</span> -d <span class="string">&quot; &quot;</span> -f 2,3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 丢弃重复error的行</span></span><br><span class="line">$ <span class="built_in">cat</span> <span class="variable">$log</span> | awk <span class="string">&#x27;&#123; if($0 ~ /error/) &#123; cnt+=1; if(cnt==1) &#123; print $0 &#125; &#125; else &#123; cnt=0; print $0 &#125; &#125;&#x27;</span> &gt; result.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 奇数偶数行合并</span></span><br><span class="line">$ <span class="built_in">cat</span> <span class="variable">$log</span> | sed <span class="string">&quot;N;s/\n//g&quot;</span> &gt; result.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将以 &quot;[oper&quot; 开头并以 &quot;request],&quot; 结尾的字符串删除, 即删除&quot;[oper:http request],&quot;</span></span><br><span class="line">$ <span class="built_in">cat</span> <span class="variable">$log</span> | sed <span class="string">&quot;s/\[oper.*request\],//g&quot;</span> &gt; result.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用awk 进行多分隔符分割, 元字符需要使用双反斜线</span></span><br><span class="line">$ <span class="built_in">cat</span> <span class="variable">$log</span> | awk <span class="string">&#x27;BEGIN&#123;FS=&quot;\\[|\\]&quot;&#125; &#123; split($0, a); for(i in a) &#123; print a[i]; &#125; &#125;&#x27;</span></span><br><span class="line">$ <span class="built_in">cat</span> <span class="variable">$log</span> | awk -F<span class="string">&#x27;[\\[\\]]&#x27;</span> <span class="string">&#x27;&#123; split($0, a); for(i in a) &#123; print a[i]; &#125; &#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="awk-脚本格式"><a href="#awk-脚本格式" class="headerlink" title="awk 脚本格式"></a>awk 脚本格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/awk -f</span></span><br><span class="line"></span><br><span class="line">BEGIN&#123;</span><br><span class="line">    <span class="comment"># 此处为全局初始化, 只会执行一次</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># FS=&quot;:|,&quot;   设置分隔符为&quot;:&quot;和&quot;,&quot;</span></span><br><span class="line">    <span class="comment"># OFS=&quot;-&quot;    设置print输出分隔符为&quot;-&quot;</span></span><br><span class="line">    <span class="comment"># NF         当前行被分割成的列数</span></span><br><span class="line">    <span class="comment"># NR         当前行号</span></span><br><span class="line">    <span class="comment"># $NF        当前行分割的最后一列内容</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 判断文件是否存在</span></span><br><span class="line">    cmd=<span class="string">&quot;[ -f &quot;</span>filename<span class="string">&quot; ]&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span>(system(cmd) == 0)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">print</span> <span class="string">&quot;file exist&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 读取文件中指定偏移位置offset 的指定长度16字节二进制数据, 去除空格, 转为大写</span></span><br><span class="line">        <span class="comment"># -An : 不显示开头的偏移地址</span></span><br><span class="line">        <span class="comment"># -j  : 跳过指定偏移量</span></span><br><span class="line">        <span class="comment"># -N  : 读取数据字节长度</span></span><br><span class="line">        <span class="comment"># -w  : 每行输出的字节数</span></span><br><span class="line">        <span class="comment"># -tx1: 以十六进制格式按单个字节的方式输出</span></span><br><span class="line">        cmd=<span class="string">&quot;od -An -j&quot;</span>offset<span class="string">&quot; -N 16 -w32 -tx1 &quot;</span>filename<span class="string">&quot; | tr -d &#x27; &#x27; | tr &#x27;a-z&#x27; &#x27;A-Z&#x27;&quot;</span>;</span><br><span class="line">        <span class="comment"># 输出结果如下(分别为三个步骤的结果):</span></span><br><span class="line">        <span class="comment"># 65 72 72 6f 72 20 32 30 31 36 2d 30 39 2d 30 31</span></span><br><span class="line">        <span class="comment"># 6572726f7220323031362d30392d3031</span></span><br><span class="line">        <span class="comment"># 6572726A7220323031362A30392A3031</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 执行操作并将终端结果保存到变量hex中</span></span><br><span class="line">        cmd | getline hex;</span><br><span class="line">        <span class="comment"># hex 中的值为: 6572726A7220323031362A30392A3031</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"># 此处以输入数据的行为单位循环执行</span></span><br><span class="line">    <span class="comment"># split($0, a, &quot;:&quot;)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">END&#123;</span><br><span class="line">    <span class="comment"># 此处为结束操作</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># awk脚本调用时获取shell变量, 使用-v 将shell变量赋值为awk内部变量</span></span><br><span class="line">$ <span class="built_in">cat</span> <span class="variable">$log</span> | awk -f sample.awk -v filename=<span class="variable">$log</span> &gt; result.log</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用 <strong><code>&quot;</code></strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;test&quot;</span> | awk <span class="string">&#x27; &#123; print &quot;\&quot;&quot; &#125; &#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li>使用 <strong><code>&#39;</code></strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;test&quot;</span> | awk <span class="string">&#x27; &#123; print &quot;&#x27;</span>\<span class="string">&#x27;&#x27;</span><span class="string">&quot; &#125; &#x27;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="分割文件名和后缀"><a href="#分割文件名和后缀" class="headerlink" title="分割文件名和后缀"></a>分割文件名和后缀</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># file=“test-1.0.0.txt”</span></span><br><span class="line"><span class="comment"># echo “filename : $&#123;file%.*&#125;”</span></span><br><span class="line"><span class="comment"># echo “extension: $&#123;file##*.&#125;”</span></span><br><span class="line"></span><br><span class="line">output:</span><br><span class="line"><span class="comment"># filename : test-1.0.0</span></span><br><span class="line"><span class="comment"># extension: txt</span></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/shell/" rel="tag"># shell</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/29/emacs-note/" rel="prev" title="Emacs 命令笔记">
+                  <i class="fa fa-chevron-left"></i> Emacs 命令笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jmtian</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

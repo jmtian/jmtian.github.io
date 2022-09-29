@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Emacs 命令笔记快捷键 C-x h   全选  C-u C-x &#x3D;   查看光标当前字符信息(字符编码,位置信息,字体等)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Emacs 命令笔记">
+<meta property="og:url" content="http://example.com/2022/09/29/emacs-note/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="Emacs 命令笔记快捷键 C-x h   全选  C-u C-x &#x3D;   查看光标当前字符信息(字符编码,位置信息,字体等)">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-09-29T08:20:52.000Z">
+<meta property="article:modified_time" content="2022-09-29T08:38:09.399Z">
+<meta property="article:author" content="jmtian">
+<meta property="article:tag" content="emacs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/09/29/emacs-note/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/09/29/emacs-note/","path":"2022/09/29/emacs-note/","title":"Emacs 命令笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Emacs 命令笔记 | Hello World</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hello World</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Emacs-%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">Emacs 命令笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">1.0.1.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#M-x-%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="nav-number">1.0.2.</span> <span class="nav-text">M-x 执行命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4"><span class="nav-number">1.0.3.</span> <span class="nav-text">配置命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#org-mode-%EF%BC%88The-Org-Manual%EF%BC%89"><span class="nav-number">1.0.4.</span> <span class="nav-text">org-mode （The Org Manual）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Emacs%E6%8F%92%E4%BB%B6%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="nav-number">1.0.5.</span> <span class="nav-text">Emacs插件错误处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spacemacs"><span class="nav-number">1.0.6.</span> <span class="nav-text">Spacemacs</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">jmtian</p>
+  <div class="site-description" itemprop="description">逝者如斯夫！不舍昼夜。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/29/emacs-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jmtian">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+      <meta itemprop="description" content="逝者如斯夫！不舍昼夜。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Emacs 命令笔记 | Hello World">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Emacs 命令笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-09-29 16:20:52 / Modified: 16:38:09" itemprop="dateCreated datePublished" datetime="2022-09-29T16:20:52+08:00">2022-09-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Emacs-命令笔记"><a href="#Emacs-命令笔记" class="headerlink" title="Emacs 命令笔记"></a>Emacs 命令笔记</h1><h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><ul>
+<li><p><code>C-x h</code></p>
+<p>  全选</p>
+</li>
+<li><p><code>C-u C-x =</code></p>
+<p>  查看光标当前字符信息(字符编码,位置信息,字体等)</p>
+</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="M-x-执行命令"><a href="#M-x-执行命令" class="headerlink" title="M-x 执行命令"></a>M-x 执行命令</h3><ul>
+<li><p><code>whitespace-mode</code>、<code>global-whitespace-mode</code></p>
+<p>  显示控制字符</p>
+</li>
+<li><p><code>untabify</code></p>
+<p>  将tab替换成空格, 先选中文本</p>
+</li>
+<li><p><code>profiler-start</code>、<code>profiler-report</code></p>
+<p>   查看性能（ cpu&#x2F;mem&#x2F;cpu+mem）</p>
+</li>
+<li><p><code>去除行尾^M</code></p>
+<p>  M-x replace-string RET, C-q C-m RET, RET</p>
+</li>
+</ul>
+<h3 id="配置命令"><a href="#配置命令" class="headerlink" title="配置命令"></a>配置命令</h3><ul>
+<li><p><code>(setq default-tab-width 4)</code></p>
+<p>  设置tab宽度</p>
+</li>
+<li><p><code>(setq c-basic-offset 4)</code></p>
+<p>  设置tab宽度</p>
+</li>
+<li><p><code>(setq c-default-style &quot;linux&quot;)</code></p>
+<p>  设置代码风格</p>
+</li>
+</ul>
+<h3 id="org-mode-（The-Org-Manual）"><a href="#org-mode-（The-Org-Manual）" class="headerlink" title="org-mode （The Org Manual）"></a>org-mode （<a target="_blank" rel="noopener" href="http://orgmode.org/manual/index.html">The Org Manual</a>）</h3><ul>
+<li><p><code>#+OPTIONS: tags:nil</code></p>
+<p>  设置不导出tags</p>
+</li>
+<li><p><code>#+OPTIONS: toc:nil</code></p>
+<p>  设置不导出Table of contents</p>
+</li>
+<li><p><code>#+OPTIONS: toc:n</code></p>
+<p>  设置Table of contents 导出等级</p>
+</li>
+<li><p><code>#+OPTIONS: tex:&#123;&#125;</code></p>
+<p>  设置tex转换模式, 被{}包含</p>
+</li>
+<li><p><code>#+OPTIONS: num:nil</code></p>
+<p>  Table of contents 前不显示序号</p>
+</li>
+<li><p><code>#+TITLE: this is a title</code></p>
+<p>  设置标题</p>
+</li>
+<li><p><code>#+STARTUP: inlineimages</code></p>
+<p>  启动时显示内嵌图片文件</p>
+</li>
+<li><p><code>C-c C-e</code></p>
+<p>  将org导出到其它格式</p>
+</li>
+<li><p><code>C-c C-c</code></p>
+<p>  操作, 不同元素有不同行为</p>
+</li>
+<li><p><code>Shift-right/left</code></p>
+<p>  为标题设置TODO、STARTED、DONE等</p>
+</li>
+<li><p><code>Tab, Shift-Tab</code></p>
+<p>  隐藏、显示标题内容</p>
+</li>
+<li><p><code>Alt-right/left</code></p>
+<p>  修改当前标题等级</p>
+</li>
+<li><p><code>Alt-up/down</code></p>
+<p>  上下调整标题顺序</p>
+</li>
+<li><p><code>C-c C-d</code></p>
+<p>  设置 dead line</p>
+</li>
+<li><p><code>- [ ]</code></p>
+<p>  [X] , 设置为taggle, 可使用 <code>C-c C-c</code> 选中或取消选中</p>
+</li>
+<li><p><code>[/]</code> 和 <code>[%]</code></p>
+<p>  [1&#x2F;3] 和 [33%] , 设置为显示子项目进度比例和百分比, 使用 <code>C-c C-c</code> 初始化数据</p>
+</li>
+<li><p><code>C-c [</code></p>
+<p>  File move to front of agenda file list</p>
+</li>
+<li><p><code>M-x org-agenda</code></p>
+<p>  Enter agenda views</p>
+</li>
+<li><p><code>&lt;s TAB</code></p>
+<p>  add source code block, <code>C-c &#39;</code> edit source code, <code>C-c C-c</code> at source code, will process code.</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#+BEGIN_SRC bash</span><br><span class="line"> ls -l</span><br><span class="line">#+END_SRC</span><br></pre></td></tr></table></figure>
+
+<p>  其它快捷方式：</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">s    #+begin_src     ... #+end_src   </span><br><span class="line">e    #+begin_example ... #+end_example    单行的例子以冒号开头  </span><br><span class="line">q    #+begin_quote   ... #+end_quote      通常用于引用，与默认格式相比左右都会留出缩进  </span><br><span class="line">v    #+begin_verse   ... #+end_verse      默认内容不换行，需要留出空行才能换行  </span><br><span class="line">c    #+begin_center  ... #+end_center   </span><br><span class="line">l    #+begin_latex   ... #+end_latex   </span><br><span class="line">L    #+latex:   </span><br><span class="line">h    #+begin_html    ... #+end_html   </span><br><span class="line">H    #+html:   </span><br><span class="line">a    #+begin_ascii   ... #+end_ascii   </span><br><span class="line">A    #+ascii:   </span><br><span class="line">i    #+index: line   </span><br><span class="line">I    #+include: line  </span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code> 下划线转义</code></p>
+<p>  <strong>单个 org 文件的解决办法：</strong></p>
+<p>  你可以在一个 org 文件的开头，用下面的设置来关闭这个功能。</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#+OPTIONS: ^:nil</span><br></pre></td></tr></table></figure>
+<p>  如果你需要更方便的设置，可以把上面这个改为</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#+OPTIONS: ^:&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>  这样，当你写<code>a_&#123;b&#125;</code>时，_ 后被 {} 括起来的内容就会被转义，而写 a_b 时，就按普通的方式来显示。</p>
+<p>  <strong>org sites 的解决办法：</strong></p>
+<p>  如果你是用 org sites 来写笔记，想让某个 site 的所有 org 文件不转义 _ 字符，则也可以直接在 org sites 配置文件里，配置下面这么一句，一了百了：</p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">setq</span> org-export-with-sub-superscripts <span class="literal">nil</span>)</span><br></pre></td></tr></table></figure>
+<p>  也可以在 org sites 里设置这个属性，只作用于某一个 site：</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:sub-superscript nil</span><br></pre></td></tr></table></figure>
+<p>  如果需要像上面一样，采用相对智能的 {} 方式，可以设置成</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:sub-superscript &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>  或是直接用 elisp 来设置全局的属性：</p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">setq</span> org-export-with-sub-superscripts &#x27;&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p>  这样就会用 {} 来转义了。</p>
+</li>
+<li><p><code>表格列分组</code></p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">|---+-----+-----+-----+-----------+--------------|</span><br><span class="line">| / |   &lt; |     |   &gt; |         &lt; |            &gt; |</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>文件列表</code></p>
+<p>  NeoTree is a NerdTree-like plugin; <code>SPC f t</code> opens the sidebar in the directory of the file you’re currently editing, and <code>SPC p t</code> opens into the current project’s root directory. <code>hjkl</code> to move around, <code>K</code> to move up directories, <code>RET</code> opens a file like you’d expect, vertical pipe <code>|</code> to open a file in a new vertical split, and hyphen <code>-</code> for a horizontal split.</p>
+</li>
+<li><p><code>函数列表</code></p>
+<p>  <code>SPC b i</code> toggle imenu-list window.</p>
+<p>  <code>q</code> quit imenu-list window.</p>
+<p>  <code>RET</code> go to current entry.</p>
+<p>  <code>d</code> display current entry, keep focus on imenu-list window.</p>
+<p>  <code>f</code> fold&#x2F;unfold current section.</p>
+</li>
+<li><p><code>导出html格式控制</code></p>
+<p>  去掉内部链接中的下划线和设置导出字体：</p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">set-variable</span> &#x27;org-html-head-extra <span class="string">&quot;&lt;style&gt; body &#123; font-family: \&quot;Courier New\&quot;;&#125; \n a &#123;text-decoration: none&#125; \n&lt;/style&gt;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>  或</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#+HTML_HEAD_EXTRA: &lt;style&gt; body &#123;<span class="attribute">font-family</span>:Courier New;&#125; <span class="selector-tag">a</span> &#123;<span class="attribute">text-decoration</span>: none&#125; &lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>配置</code><a target="_blank" rel="noopener" href="http://plantuml.com/">plantuml</a></p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">setq</span> org-plantuml-jar-path <span class="string">&quot;full-path/plantuml.jar&quot;</span>) <span class="comment">;;; 对org-plantuml有效</span></span><br><span class="line">(<span class="name">setq</span> plantuml-jar-path <span class="string">&quot;full-path/plantuml.jar&quot;</span>)     <span class="comment">;;; 对plantuml-mode有效</span></span><br></pre></td></tr></table></figure>
+<p>  安装<a target="_blank" rel="noopener" href="http://www.graphviz.org/">GraphViz</a>, 并设置环境变量</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRAPHVIZ_DOT = GraphViz-Path/bin/dot.exe</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>C-c C-c 编译plantuml后更新图片显示</code></p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">add-hook</span> &#x27;org-babel-after-execute-hook</span><br><span class="line">        (<span class="name">lambda</span> ()</span><br><span class="line">            (<span class="name">when</span> org-inline-image-overlays</span><br><span class="line">            (<span class="name">org-redisplay-inline-images</span>))))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>设置中文字体</code></p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">dolist</span> (<span class="name">charset</span> &#x27;(kana han symbol cjk-misc bopomofo))</span><br><span class="line">    (<span class="name">set-fontset-font</span> (<span class="name">frame-parameter</span> <span class="literal">nil</span> &#x27;font)</span><br><span class="line">                        charset (<span class="name">font-spec</span> <span class="symbol">:family</span> <span class="string">&quot;微软雅黑&quot;</span> <span class="symbol">:size</span> <span class="number">16</span> <span class="symbol">:scale</span> <span class="number">0.8</span>)))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>对内嵌src C-c C-c 求值</code></p>
+<p>  在org.el中设置</p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">defcustom</span> org-babel-load-languages &#x27;((emacs-lisp . <span class="literal">t</span>)</span><br><span class="line">                                  (plantuml . <span class="literal">t</span>)</span><br><span class="line">                                  (python . <span class="literal">t</span>))</span><br></pre></td></tr></table></figure>
+
+<p>  或者在dotspacemacs&#x2F;user-config()中添加</p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">org-babel-do-load-languages</span></span><br><span class="line">    &#x27;org-babel-load-languages</span><br><span class="line">    &#x27;((emacs-lisp .<span class="literal">t</span>)</span><br><span class="line">        (plantuml . <span class="literal">t</span>)</span><br><span class="line">        (python . <span class="literal">t</span>)</span><br><span class="line">        ))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>配置spell-checking</code></p>
+</li>
+</ul>
+<ol>
+<li>在 <code>dotspacemacs-configuration-layers</code> 中添加 <code>spell-checking</code></li>
+<li>下载 <a target="_blank" rel="noopener" href="http://ftp.gnu.org/gnu/aspell/w32/Aspell-0-50-3-3-Setup.exe">aspell</a> 和 <a target="_blank" rel="noopener" href="http://ftp.gnu.org/gnu/aspell/w32/Aspell-0-50-3-3-Setup.exe">dictionary</a></li>
+<li>配置变量</li>
+</ol>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">set-variable</span> &#x27;ispell-program-name <span class="string">&quot;d:/emacs-w64-25.1-O2-with-modules/emacs/plugins/aspell/bin/aspell.exe&quot;</span>)</span><br><span class="line">(<span class="name">set-variable</span> &#x27;ispell-dictionary <span class="string">&quot;english&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>内嵌代码的输出设置(以python为例)</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#+BEGIN_SRC python :results output</span></span><br><span class="line">  <span class="keyword">import</span> time</span><br><span class="line">  <span class="keyword">import</span> os</span><br><span class="line">  <span class="keyword">if</span> <span class="literal">True</span> :</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">&quot;Hello, today&#x27;s date is %s&quot;</span> % time.ctime())</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">&#x27;Two plus two is %s&#x27;</span> % <span class="built_in">str</span>(<span class="number">2</span>+<span class="number">2</span>))</span><br><span class="line">  <span class="built_in">print</span> os.listdir(<span class="string">&quot;.&quot;</span>)</span><br><span class="line"><span class="comment">#+END_SRC</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>org 增加export模式</code></li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">setq</span> org-export-backends (<span class="name">quote</span> (ascii html icalendar latex md)))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>org 模式执行内嵌代码时关闭确认</code></li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">setq</span> org-confirm-babel-evaluate <span class="literal">nil</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>命令行方式将org文件转换到html</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ emacs file.org --batch --<span class="built_in">eval</span> <span class="string">&quot;(require &#x27;ox)&quot;</span> --<span class="built_in">eval</span> <span class="string">&quot;(org-html-export-to-html)&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Emacs插件错误处理"><a href="#Emacs插件错误处理" class="headerlink" title="Emacs插件错误处理"></a>Emacs插件错误处理</h3><ul>
+<li><p><code>org install error</code></p>
+<p>  <code>Invalid function: org-babel-header-args-safe-fn</code></p>
+<p>  遇到这个问题尝试重新编译 byte-compile-file: ob-R.el, 或者安装 org-plus-contrib</p>
+<p>  <code>&#39;Meta+x&#39; byte-compile-file &lt;path to org&gt;/ob-R.el</code></p>
+</li>
+</ul>
+<h3 id="Spacemacs"><a href="#Spacemacs" class="headerlink" title="Spacemacs"></a>Spacemacs</h3><ul>
+<li><p><code>melpa.org 镜像</code></p>
+<p>  <a target="_blank" rel="noopener" href="http://elpa.emacs-china.org/">http://elpa.emacs-china.org/</a></p>
+<p>  添加下面的代码到 .spacemacs 的 dotspacemacs&#x2F;user-init()</p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">setq</span> configuration-layer--elpa-archives</span><br><span class="line">    &#x27;((<span class="string">&quot;melpa-cn&quot;</span> . <span class="string">&quot;http://elpa.emacs-china.org/melpa/&quot;</span>)</span><br><span class="line">    (<span class="string">&quot;org-cn&quot;</span>   . <span class="string">&quot;http://elpa.emacs-china.org/org/&quot;</span>)</span><br><span class="line">    (<span class="string">&quot;gnu-cn&quot;</span>   . <span class="string">&quot;http://elpa.emacs-china.org/gnu/&quot;</span>)))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>设置 Tab width</code></p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">setq</span> c-basic-offset <span class="number">4</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/emacs/" rel="tag"># emacs</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/29/Win32toUWP/" rel="prev" title="Win32 C++项目移植到 Win10 UWP">
+                  <i class="fa fa-chevron-left"></i> Win32 C++项目移植到 Win10 UWP
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/09/29/shell-note/" rel="next" title="Shell 命令笔记">
+                  Shell 命令笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jmtian</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

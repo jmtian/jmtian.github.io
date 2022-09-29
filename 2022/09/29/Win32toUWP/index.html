@@ -28,8 +28,9 @@
 <meta property="og:description" content="本文可能对谁有帮助如果你正在做将现有的Win32 静态库 或 DLL 工程移植到Win10 UWP(通用 Windows) 环境，这篇文章可能会对你有帮助。  概述在VS2015的 新建项目 -&gt; 已安装 -&gt; 模板 -&gt; Visual C++ -&gt; Windows -&gt; 通用 页面，包含几个我们需要关心的工程类型：空白应用(通用 Windows)、DLL(通用 Wi">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-09-29T03:31:08.000Z">
-<meta property="article:modified_time" content="2022-09-29T03:42:34.682Z">
+<meta property="article:modified_time" content="2022-09-29T08:38:23.452Z">
 <meta property="article:author" content="jmtian">
+<meta property="article:tag" content="Programs">
 <meta name="twitter:card" content="summary">
 
 
@@ -129,9 +130,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
@@ -199,7 +205,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-09-29 11:31:08 / Modified: 11:42:34" itemprop="dateCreated datePublished" datetime="2022-09-29T11:31:08+08:00">2022-09-29</time>
+      <time title="Created: 2022-09-29 11:31:08 / Modified: 16:38:23" itemprop="dateCreated datePublished" datetime="2022-09-29T11:31:08+08:00">2022-09-29</time>
     </span>
 
   
@@ -217,6 +223,8 @@
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a><strong>概述</strong></h2><p>在VS2015的 <code>新建项目</code> -&gt; <code>已安装</code> -&gt; <code>模板</code> -&gt; <code>Visual C++</code> -&gt; <code>Windows</code> -&gt; <code>通用</code> 页面，包含几个我们需要关心的工程类型：<code>空白应用(通用 Windows)</code>、<code>DLL(通用 Windwos)</code>、<code>静态库(通用 Windows)</code>、<code>Windows 运行时组件(通用 Windows)</code>。</p>
 <p>根据工程说明可以知道，<code>DLL(通用 Windwos)</code>和<code>静态库(通用 Windows)</code>可以被<code>空白应用(通用 Windows)</code>和<code>Windows 运行时组件(通用 Windows)</code>使用，并且是语言相关的，不能跨语言调用。<br>而<code>Windows 运行时组件(通用 Windows)</code>可以被<code>空白应用(通用 Windows)</code>使用，是语言无关的。也就是说，不管是<code>C++</code>还是<code>C#</code>开发的应用都可以调用<code>Windows 运行时组件(通用 Windows)</code>。</p>
 <p>知道了这一点，那么我们来看下问题，博主（C++程序员，未接触过C#及WinPhone相关开发）遇到的情况是这样的：将现有的 <code>Win32 平台DLL</code> 移植到 <code>UWP</code> 平台，供采用 <code>C#</code> 开发的Win Phone APP使用，而该 <code>DLL</code> 还依赖其它 <code>C++静态LIB库</code> 和 <code>C动态库</code>。</p>
+<span id="more"></span>
+
 <p>我们需要做的包括以下几个方面：</p>
 <ul>
 <li><a href="#%E6%9C%AC%E6%96%87%E5%8F%AF%E8%83%BD%E5%AF%B9%E8%B0%81%E6%9C%89%E5%B8%AE%E5%8A%A9"><strong>本文可能对谁有帮助</strong></a></li>
@@ -332,9 +340,21 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Programs/" rel="tag"># Programs</a>
+          </div>
 
         
 
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/09/29/emacs-note/" rel="next" title="Emacs 命令笔记">
+                  Emacs 命令笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
